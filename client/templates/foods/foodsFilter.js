@@ -1,5 +1,5 @@
 Template.foodsFilter.helpers({
   foodFilters: function () {
-    return Foods.distinct("foodCategory");
+    console.log(Foods.find({}, {fields: {foodCategory:1, _id: 0}}));
   }
 });
