@@ -1,5 +1,5 @@
 <template name="foodsFilter">
   {{#each foodFilters}}
-    {{> foodFilter}}
+    <input type="checkbox" name="{{this}}" class="filter-food" />
   {{/each}}
 </template>
