@@ -1,0 +1,8 @@
+<template name="foodsAvailable">
+  <a href="{{pathFor 'shoppingList'}}">Shopping List</a>
+  {{> foodsFilter}}
+  {{#each foods}}
+    {{> food}}
+  {{/each}}
+  {{>foodEntry}}
+</template>
