@@ -23,4 +23,10 @@ if (Foods.find().count() === 0) {
       foodCategory: "Greens"
     }
   );
+  Foods.insert(
+  {
+    food: "apple",
+    foodCategory: "Fruit"
+  }
+);
 }

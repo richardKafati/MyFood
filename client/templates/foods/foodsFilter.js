@@ -1,5 +1,13 @@
 Template.foodsFilter.helpers({
   foodFilters: function () {
-    console.log(Foods.find({}, {fields: {foodCategory:1, _id: 0}}));
+    FoodsDbFoodCategoriesAndIDsNotUnique = Foods.find({}, {fields: {foodCategory: 1}}).fetch();
+    console.log(FoodsDbFoodCategoriesAndIDsNotUnique);
+    FoodsDbFoodCategoriesNotUnique = _.map(FoodsDbFoodCategoriesAndIDsNotUnique, function (document) {
+      delete document._id;
+      return document;
+    });
+    console.log(FoodsDbFoodCategoriesNotUnique);
+    FoodsDbFoodCategories = _.uniq(FoodsDbFoodCategoriesNotUnique);
+    console.log(FoodsDbFoodCategories);
   }
 });
